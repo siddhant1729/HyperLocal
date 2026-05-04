@@ -1,0 +1,54 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * { box-sizing: border-box; }
+
+  body {
+    @apply bg-gray-950 text-gray-100 font-sans antialiased;
+    min-height: 100vh;
+  }
+
+  ::-webkit-scrollbar { width: 6px; height: 6px; }
+  ::-webkit-scrollbar-track { @apply bg-gray-900; }
+  ::-webkit-scrollbar-thumb { @apply bg-gray-600 rounded-full; }
+  ::-webkit-scrollbar-thumb:hover { @apply bg-brand-500; }
+}
+
+@layer components {
+  .btn-primary {
+    @apply inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-brand-500 text-white font-semibold
+           hover:bg-brand-600 active:scale-95 transition-all duration-150 disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+  .btn-secondary {
+    @apply inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-gray-800 text-gray-200 font-semibold
+           hover:bg-gray-700 active:scale-95 transition-all duration-150 border border-gray-700;
+  }
+  .btn-danger {
+    @apply inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-red-600 text-white font-semibold
+           hover:bg-red-700 active:scale-95 transition-all duration-150;
+  }
+  .card {
+    @apply bg-gray-900 border border-gray-800 rounded-xl p-5 shadow-lg;
+  }
+  .glass {
+    @apply bg-white/5 backdrop-blur-md border border-white/10 rounded-xl;
+  }
+  .input {
+    @apply w-full px-3 py-2 rounded-lg bg-gray-800 border border-gray-700 text-gray-100
+           placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-transparent
+           transition-all duration-150;
+  }
+  .label {
+    @apply block text-sm font-medium text-gray-300 mb-1;
+  }
+  .badge {
+    @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold;
+  }
+  .badge-green  { @apply badge bg-brand-500/20 text-brand-400; }
+  .badge-yellow { @apply badge bg-amber-500/20 text-amber-400; }
+  .badge-red    { @apply badge bg-red-500/20 text-red-400; }
+  .badge-gray   { @apply badge bg-gray-700 text-gray-300; }
+  .badge-blue   { @apply badge bg-blue-500/20 text-blue-400; }
+}
